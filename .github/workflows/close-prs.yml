@@ -1,0 +1,24 @@
+name: close-prs
+
+# このリポジトリは開発側の非公開リポジトリからの自動同期でのみ更新される。
+# ブランチ保護により誰も PR をマージできないので、開いた PR には案内を付けて閉じる。
+# フォークからの PR にも書き込むため pull_request_target を使う。PR のコードは checkout しない。
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment and close
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh pr comment "$PR" --repo "$REPO" --body "ご提案ありがとうございます。このリポジトリは自動同期で更新されるため Pull Request はマージできず、自動で閉じています。内容は確認し、必要なら開発側のリポジトリへ取り込みます。質問や不具合は Issues へお願いします。"
+          gh pr close "$PR" --repo "$REPO"
