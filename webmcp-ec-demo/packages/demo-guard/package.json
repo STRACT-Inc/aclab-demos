@@ -1,0 +1,23 @@
+{
+  "name": "@aclab/demo-guard",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.72.1",
+    "@upstash/redis": "^1.38.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@aclab/config": "workspace:*",
+    "@types/node": "^22",
+    "typescript": "^5"
+  }
+}

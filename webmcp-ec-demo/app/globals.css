@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+/* ==========================================================
+   ACLAB Store のデザイントークン
+   本体サイト(@aclab/ui)のトークンは使わない。あちらは報道面の規約(白地・墨 1 値・
+   グレー文字禁止)で、商品を並べる EC には向かないため。読者が「よくある EC」として
+   受け取れる見た目にすることが、記事の検証の前提になる。
+   ========================================================== */
+@theme {
+  --color-bg: #faf9f7; /* 温かみのある地 */
+  --color-surface: #ffffff;
+  --color-ink: #17181a; /* 見出し・本文 */
+  --color-muted: #6b7076; /* 補助文字(EC では階層を作るために使う) */
+  --color-line: #e7e4de; /* 罫 */
+  --color-accent: #1f6e4e; /* 深緑。日本茶を扱う店の一色 */
+  --color-accent-ink: #175a3f; /* リンク文字・hover */
+  --color-accent-soft: #eef5f1; /* 淡い地 */
+  --color-sale: #b4432c; /* 在庫切れ・期限などの注意 */
+
+  --font-sans: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+
+  --radius-card: 14px;
+
+  --shadow-card: 0 1px 2px rgb(23 24 26 / 4%), 0 8px 24px rgb(23 24 26 / 5%);
+  --shadow-lift: 0 2px 4px rgb(23 24 26 / 6%), 0 16px 40px rgb(23 24 26 / 9%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-feature-settings: "palt" 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+button:not(:disabled),
+summary {
+  cursor: pointer;
+}
+
+/* 価格や個数は等幅の数字で揃える */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 部品 ---------- */
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  line-height: 1;
+  transition: background-color 150ms ease, border-color 150ms ease, opacity 150ms ease;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.9rem 1.6rem;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-accent-ink);
+}
+
+.btn-primary:disabled {
+  background: #c8cdc9;
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  padding: 0.7rem 1.2rem;
+}
+
+.btn-outline:hover:not(:disabled) {
+  border-color: var(--color-ink);
+}
+
+.field {
+  width: 100%;
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+  background: var(--color-surface);
+  padding: 0.65rem 0.8rem;
+  font-size: 14px;
+}
+
+.field:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  background: var(--color-surface);
+  padding: 0.4rem 0.9rem;
+  font-size: 13px;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.chip:hover,
+.chip[data-active="true"] {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-ink);
+}
+
+/* 商品カード。持ち上がる動きは控えめにする */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-2px);
+}
+
+/* 送料無料までの進み具合 */
+.meter {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-line);
+  overflow: hidden;
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--color-accent);
+  transition: width 300ms ease;
+}
+
+/* カートに入った瞬間を光らせる(見せる自動化) */
+@keyframes cart-flash {
+  0% {
+    background: var(--color-accent);
+    color: #fff;
+  }
+  100% {
+    background: transparent;
+    color: inherit;
+  }
+}
+
+.cart-flash {
+  animation: cart-flash 900ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .product-card,
+  .meter > span,
+  .cart-flash {
+    transition: none;
+    animation: none;
+  }
+}

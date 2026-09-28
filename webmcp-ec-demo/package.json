@@ -1,0 +1,32 @@
+{
+  "name": "@aclab/demo-webmcp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3200",
+    "build": "next build",
+    "start": "next start --port 3200",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "node --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@aclab/demo-contract": "workspace:*",
+    "@aclab/demo-guard": "workspace:*",
+    "@mcp-b/webmcp-polyfill": "^5.1.0",
+    "ajv": "^8.17.1",
+    "next": "^16",
+    "react": "^19",
+    "react-dom": "^19",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@aclab/config": "workspace:*",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@9.15.0"
+}
