@@ -7,7 +7,7 @@
 <!-- demos:start -->
 | Demo | Article |
 |---|---|
-| [WebMCP とは何か。EC サイトに実装して分かった、ツール設計の勘所](./webmcp-ec-demo) | [webmcp-ec-demo](https://agentic-commerce-lab.jp/articles/webmcp-ec-demo) |
+| [webmcp-ec-demo](./webmcp-ec-demo) | [WebMCP とは何か。EC サイトに実装して分かった、ツール設計の勘所](https://agentic-commerce-lab.jp/articles/webmcp-ec-demo) |
 <!-- demos:end -->
 
 ## 使い方
