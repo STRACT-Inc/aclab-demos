@@ -1,0 +1,5 @@
+node_modules/
+.env
+.env.*
+# 実測ログ。公開するものは伏せ字を確かめてから個別に追加する
+results/

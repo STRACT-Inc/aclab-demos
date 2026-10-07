@@ -1,0 +1,28 @@
+{
+  "ucp": {
+    "version": "2026-08-25",
+    "capabilities": {
+      "dev.ucp.shopping.cart": [
+        {
+          "version": "2026-08-25"
+        }
+      ],
+      "dev.ucp.shopping.checkout": [
+        {
+          "version": "2026-08-25"
+        }
+      ]
+    }
+  },
+  "keys": [
+    {
+      "kid": "aclab-shopify-agent-trust-tiers-2026-10",
+      "kty": "EC",
+      "x": "0fJT5jBqyHo8XFxzfGs37vpBDh9BKA-Xy7WnQ3TJsz0",
+      "y": "B6sTUlFC4YbqcMUur_OAw5cOYERDwBFO0O3VERGnzw0",
+      "crv": "P-256",
+      "use": "sig",
+      "alg": "ES256"
+    }
+  ]
+}

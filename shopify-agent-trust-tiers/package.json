@@ -1,0 +1,16 @@
+{
+  "name": "shopify-agent-trust-tiers",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "gen-key": "node scripts/gen-key.mjs",
+    "flow": "node scripts/run-flow.mjs",
+    "rate": "node scripts/probe-rate-limit.mjs",
+    "test": "node --test \"test/*.test.mjs\""
+  }
+}
