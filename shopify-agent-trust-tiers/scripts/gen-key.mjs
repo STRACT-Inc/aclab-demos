@@ -5,7 +5,8 @@
  *   pnpm gen-key [--kid <key id>] [--out <path>]
  *
  * 公開鍵入りのプロフィールを ucp-profile.json に書く。このファイルは公開して、その URL を AGENT_PROFILE_URL に入れる。
- * このデモでは公開リポジトリから raw.githubusercontent.com 経由で配信している(README を参照)。
+ * 配信には Content-Type: application/json と Cache-Control ヘッダーが要る(README を参照)。
+ * このデモの分は公開リポジトリの github-pages/ から GitHub Pages で配信している。
  * 秘密鍵は標準出力に 1 行で出すので、UCP_SIGNING_KEY_JWK に入れる。ファイルには書かない。
  */
 import { generateKeyPairSync } from "node:crypto";

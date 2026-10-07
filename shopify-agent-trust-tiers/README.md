@@ -41,7 +41,15 @@ pnpm gen-key
 
 `ucp-profile.json` に、cart と checkout の capability と公開鍵を載せたプロフィールができます。このファイルを HTTPS で公開し、その URL を `.env` の `AGENT_PROFILE_URL` に入れます。標準出力に出る `UCP_SIGNING_KEY_JWK=...` の行は秘密鍵なので、`.env` にだけ書きます。
 
-このリポジトリにある `ucp-profile.json` は、公開リポジトリから raw.githubusercontent.com 経由で `https://raw.githubusercontent.com/STRACT-Inc/aclab-demos/main/shopify-agent-trust-tiers/ucp-profile.json` として配信しています。載っているのは公開鍵だけで、対になる秘密鍵は公開していません。自分で Signed を試すときは、`pnpm gen-key` で作り直したファイルを自分の管理する URL に置いてください。エージェントのプロフィールは店側の `/.well-known/ucp` と違い、固定のパスではなく任意の URL で指定できます。
+プロフィールの配信には条件があります(2026 年 10 月の実測)。
+
+- `Content-Type` が `application/json` であること。`raw.githubusercontent.com` は `text/plain` で返すため使えません
+- `Cache-Control` ヘッダーが付いていること。無いと Shopify はプロフィールを受け付けません
+- 条件を満たさないとき、ストアの MCP は `HTTP signature error: key_not_found` を返します。原因が分かりにくいので、先に Global Catalog(`https://catalog.shopify.com/api/ucp/mcp`)へ同じプロフィールで `search_catalog` を送ると、`profile_malformed: Invalid content type` や `Invalid cache control` のように理由が返ります
+
+GitHub Pages はこの条件を満たします。このデモのプロフィールは公開リポジトリの `github-pages/shopify-agent-trust-tiers/ucp-profile.json` にあり、GitHub Pages で `https://stract-inc.github.io/aclab-demos/shopify-agent-trust-tiers/ucp-profile.json` として配信しています。載っているのは公開鍵だけで、対になる秘密鍵は公開していません。自分で Signed を試すときは、`pnpm gen-key` で作り直したファイルを自分の管理する URL に置いてください。エージェントのプロフィールは店側の `/.well-known/ucp` と違い、固定のパスではなく任意の URL で指定できます。
+
+署名の組み立てで注意する点が 1 つあります。状態を変えるツール(`create_cart`、`create_checkout`、`update_*`、`cancel_*`、`complete_checkout`)では、`Idempotency-Key` ヘッダーを付けて署名対象に含める必要があります。無いと `HTTP signature error: signature_missing` になります。`get_cart` のような読み取りでは不要です。
 
 ### レート制限を見る
 

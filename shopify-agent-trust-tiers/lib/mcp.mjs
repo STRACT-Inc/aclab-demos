@@ -4,6 +4,9 @@ import { tierHeaders } from "./tiers.mjs";
 
 // meta["idempotency-key"] が必須のツール(Cart MCP / Checkout MCP のリファレンスより)
 const NEEDS_IDEMPOTENCY_KEY = new Set(["cancel_cart", "complete_checkout", "cancel_checkout"]);
+// 状態を読むだけのツール。それ以外は Signed で Idempotency-Key ヘッダーを署名に含めないと
+// "HTTP signature error: signature_missing" で弾かれる(2026-10-07 実測)
+const READ_ONLY = new Set(["get_cart", "get_checkout", "get_order", "search_catalog", "lookup_catalog", "get_product"]);
 
 // レート制限の手がかりになるヘッダー。名前は実測で確かめるので、広めに拾う
 const RATE_HEADER = /^(retry-after$|ratelimit|x-ratelimit|x-shopify-|x-request-id$)/i;
@@ -60,9 +63,9 @@ export function summarize(json) {
 }
 
 export async function callTool({ config, tier, name, args = {}, fetchImpl = fetch }) {
-  const idempotencyKey = NEEDS_IDEMPOTENCY_KEY.has(name) ? randomUUID() : undefined;
+  const idempotencyKey = READ_ONLY.has(name) ? undefined : randomUUID();
   const meta = { "ucp-agent": { profile: config.profileUrl } };
-  if (idempotencyKey) meta["idempotency-key"] = idempotencyKey;
+  if (idempotencyKey && NEEDS_IDEMPOTENCY_KEY.has(name)) meta["idempotency-key"] = idempotencyKey;
 
   // 署名は送るバイト列に対して計算するので、本文は一度だけバイト列にして使い回す
   const bodyBytes = Buffer.from(
