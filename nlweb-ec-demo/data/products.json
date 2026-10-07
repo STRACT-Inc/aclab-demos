@@ -1,0 +1,392 @@
+[
+  {
+    "id": "tea-gyokuro-50g",
+    "name": "玉露 50g",
+    "category": "tea",
+    "price_jpy": 2800,
+    "summary": "静岡県産の玉露です。覆いをかけて育てた茶葉で旨みが強く、渋みは控えめです。60度ほどのぬるめの湯で2〜3分かけて淹れると、甘みがはっきり出ます。",
+    "in_stock": true,
+    "rating": 4.5,
+    "variants": [],
+    "tags": [
+      "贈り物",
+      "ギフト",
+      "高級",
+      "緑茶"
+    ]
+  },
+  {
+    "id": "tea-sencha-100g",
+    "name": "煎茶 100g",
+    "category": "tea",
+    "price_jpy": 1800,
+    "summary": "静岡県産の煎茶です。中蒸しで仕上げてあり、香りと渋みのバランスが取れています。70度前後の湯で1分ほど蒸らすと、すっきりした味わいになります。",
+    "in_stock": true,
+    "rating": 4.2,
+    "variants": [],
+    "tags": [
+      "贈り物",
+      "ギフト",
+      "定番",
+      "緑茶",
+      "日常"
+    ]
+  },
+  {
+    "id": "tea-hojicha-100g",
+    "name": "ほうじ茶 100g",
+    "category": "tea",
+    "price_jpy": 1200,
+    "summary": "茶葉を高温で焙じたほうじ茶です。カフェインが少なく、香ばしい香りが立ちます。熱湯で淹れても渋くなりにくく、食後や就寝前にも向きます。",
+    "in_stock": true,
+    "rating": 4.1,
+    "variants": [],
+    "tags": [
+      "日常",
+      "カフェインひかえめ",
+      "ほうじ茶"
+    ]
+  },
+  {
+    "id": "tea-genmaicha-100g",
+    "name": "玄米茶 100g",
+    "category": "tea",
+    "price_jpy": 1100,
+    "summary": "煎茶に炒った玄米を合わせたお茶です。玄米の香ばしさがあるため、茶葉の量が少なめでも満足感があります。熱湯でさっと淹れられ、食事に合わせやすい一杯です。",
+    "in_stock": true,
+    "rating": 3.9,
+    "variants": [],
+    "tags": [
+      "日常",
+      "香ばしい",
+      "玄米茶"
+    ]
+  },
+  {
+    "id": "tea-matcha-30g",
+    "name": "抹茶 30g",
+    "category": "tea",
+    "price_jpy": 3600,
+    "summary": "石臼で挽いた抹茶です。茶筅で点てるほか、牛乳や豆乳に溶いて飲むこともできます。開封後は香りが落ちやすいため、冷暗所で保管してください。",
+    "in_stock": true,
+    "rating": 4.6,
+    "variants": [],
+    "tags": [
+      "贈り物",
+      "ギフト",
+      "抹茶",
+      "点てる"
+    ]
+  },
+  {
+    "id": "tea-konacha-100g",
+    "name": "粉茶 100g",
+    "category": "tea",
+    "price_jpy": 900,
+    "summary": "茶葉の仕上げ工程で出る粉と細かい葉を集めたお茶です。渋みが出やすいため熱湯でさっと淹れます。濃く出るので、寿司店で使われることもあります。",
+    "in_stock": true,
+    "rating": 3.7,
+    "variants": [],
+    "tags": [
+      "日常",
+      "手軽",
+      "業務用"
+    ]
+  },
+  {
+    "id": "wagashi-dorayaki-4p",
+    "name": "どら焼き 4個入",
+    "category": "wagashi",
+    "price_jpy": 1400,
+    "summary": "餡を挟んだどら焼きです。生地はふんわりと厚めに焼き上げてあり、小豆餡は甘さを抑えています。常温で日持ちがしますが、冷やしても食べられます。",
+    "in_stock": true,
+    "rating": 4.3,
+    "variants": [],
+    "tags": [
+      "贈り物",
+      "手土産",
+      "individual"
+    ]
+  },
+  {
+    "id": "wagashi-yokan-1bar",
+    "name": "小倉羊羹 1本",
+    "category": "wagashi",
+    "price_jpy": 1600,
+    "summary": "小豆をじっくり練り上げた羊羹です。1本を輪切りにして、お茶請けとして少しずつ食べられます。常温で長く保存でき、贈答用にも使われています。",
+    "in_stock": true,
+    "rating": 4,
+    "variants": [],
+    "tags": [
+      "贈り物",
+      "ギフト",
+      "日持ち"
+    ]
+  },
+  {
+    "id": "wagashi-monaka-6p",
+    "name": "もなか 6個入",
+    "category": "wagashi",
+    "price_jpy": 1500,
+    "summary": "皮であんこを挟んだもなかです。皮と餡が別々に包装されており、食べる直前に挟むとパリッとした食感が楽しめます。1個ずつ個包装されています。",
+    "in_stock": true,
+    "rating": 4.4,
+    "variants": [],
+    "tags": [
+      "贈り物",
+      "手土産",
+      "個包装"
+    ]
+  },
+  {
+    "id": "wagashi-daifuku-5p",
+    "name": "豆大福 5個入",
+    "category": "wagashi",
+    "price_jpy": 1300,
+    "summary": "こしあんを求肥で包んだ豆大福です。赤えんどう豆の塩気が餡の甘さと合います。当日中がもっとも柔らかく、翌日は軽く温めると食感が戻ります。",
+    "in_stock": true,
+    "rating": 4.7,
+    "variants": [],
+    "tags": [
+      "日常",
+      "生菓子"
+    ]
+  },
+  {
+    "id": "wagashi-senbei-10p",
+    "name": "瓦せんべい 10枚入",
+    "category": "wagashi",
+    "price_jpy": 1200,
+    "summary": "瓦の形に焼き上げたせんべいです。生地に卵と砂糖を加えてあり、軽い甘さとパリッとした歯ごたえがあります。個包装なので配りやすい形状です。",
+    "in_stock": true,
+    "rating": 3.8,
+    "variants": [],
+    "tags": [
+      "手土産",
+      "個包装",
+      "塩味"
+    ]
+  },
+  {
+    "id": "wagashi-castella-1box",
+    "name": "カステラ 1本",
+    "category": "wagashi",
+    "price_jpy": 2200,
+    "summary": "卵と蜂蜜を使ったカステラです。底のざらめ糖が焼き上がりの食感の違いを出しています。1本を厚めに切り分けて、来客時のお茶請けにも使えます。",
+    "in_stock": true,
+    "rating": 4.2,
+    "variants": [],
+    "tags": [
+      "贈り物",
+      "ギフト",
+      "日持ち"
+    ]
+  },
+  {
+    "id": "kitchen-kyusu-300ml",
+    "name": "常滑急須 300ml",
+    "category": "kitchen",
+    "price_jpy": 4200,
+    "summary": "常滑焼の急須です。茶葉の開きを妨げにくい形状で、注ぎ口の切れも良く最後の一滴まで垂れにくくなっています。使用後は洗剤を使わず水洗いします。",
+    "in_stock": true,
+    "rating": 4.6,
+    "variants": [],
+    "tags": [
+      "贈り物",
+      "ギフト",
+      "茶器"
+    ]
+  },
+  {
+    "id": "kitchen-yunomi-pair",
+    "name": "湯のみ ペア",
+    "category": "kitchen",
+    "price_jpy": 3800,
+    "summary": "湯のみのペアセットです。手に収まりやすい厚みがあり、熱いお茶を注いでも持ちやすい形状です。電子レンジと食洗機はどちらも使用できません。",
+    "in_stock": true,
+    "rating": 4,
+    "variants": [],
+    "tags": [
+      "贈り物",
+      "ギフト",
+      "ペア",
+      "茶器"
+    ]
+  },
+  {
+    "id": "kitchen-chasen-bamboo",
+    "name": "茶筅(竹製)",
+    "category": "kitchen",
+    "price_jpy": 3300,
+    "summary": "抹茶を点てるための竹製の茶筅です。穂先が細く割られており、少ない湯でも泡立てやすくなっています。使用後は穂先を開いた状態で乾かします。",
+    "in_stock": true,
+    "rating": 4.3,
+    "variants": [],
+    "tags": [
+      "茶器",
+      "抹茶"
+    ]
+  },
+  {
+    "id": "kitchen-drip-kettle",
+    "name": "ドリップケトル",
+    "category": "kitchen",
+    "price_jpy": 5800,
+    "summary": "コーヒーのドリップに向いた細口のケトルです。注ぎ口が細く、湯の量を少しずつ調整しやすい形状です。直火とIHのどちらにも対応しています。",
+    "in_stock": false,
+    "rating": 4.5,
+    "variants": [],
+    "tags": [
+      "贈り物",
+      "コーヒー"
+    ]
+  },
+  {
+    "id": "kitchen-cutting-board",
+    "name": "檜まな板",
+    "category": "kitchen",
+    "price_jpy": 4600,
+    "summary": "檜を使ったまな板です。木の油分が水をはじきやすく、乾きが早いのが特徴です。使用後は洗剤で洗い、風通しの良い場所に立てて保管します。",
+    "in_stock": true,
+    "rating": 4.1,
+    "variants": [],
+    "tags": [
+      "日常",
+      "調理"
+    ]
+  },
+  {
+    "id": "kitchen-tumbler-360ml",
+    "name": "ステンレスタンブラー 360ml",
+    "category": "kitchen",
+    "price_jpy": 2600,
+    "summary": "二重構造のステンレスタンブラーです。保温と保冷のどちらにも対応しており、結露しにくいのが特徴です。食洗機には対応していません。",
+    "in_stock": true,
+    "rating": 3.6,
+    "variants": [],
+    "tags": [
+      "日常",
+      "持ち歩き",
+      "保温"
+    ]
+  },
+  {
+    "id": "apparel-tshirt",
+    "name": "コットン T シャツ",
+    "category": "apparel",
+    "price_jpy": 3200,
+    "summary": "厚みのある天竺編みのコットンTシャツです。首まわりのリブがしっかりしており、洗濯を重ねても型崩れしにくい作りです。白と黒の2色展開です。",
+    "in_stock": true,
+    "rating": 4.2,
+    "variants": [
+      {
+        "id": "tshirt-white-s",
+        "label": "白 / S",
+        "in_stock": true
+      },
+      {
+        "id": "tshirt-white-m",
+        "label": "白 / M",
+        "in_stock": true
+      },
+      {
+        "id": "tshirt-white-l",
+        "label": "白 / L",
+        "in_stock": true
+      },
+      {
+        "id": "tshirt-black-s",
+        "label": "黒 / S",
+        "in_stock": true
+      },
+      {
+        "id": "tshirt-black-m",
+        "label": "黒 / M",
+        "in_stock": true
+      },
+      {
+        "id": "tshirt-black-l",
+        "label": "黒 / L",
+        "in_stock": false
+      }
+    ],
+    "tags": [
+      "日常",
+      "綿"
+    ]
+  },
+  {
+    "id": "apparel-tote-bag",
+    "name": "キャンバストートバッグ",
+    "category": "apparel",
+    "price_jpy": 2400,
+    "summary": "帆布を使ったキャンバストートバッグです。底鋲が付いており、荷物を入れても自立しやすい作りです。内側に小物用のポケットが1つあります。",
+    "in_stock": true,
+    "rating": 4.4,
+    "variants": [],
+    "tags": [
+      "日常",
+      "持ち歩き",
+      "綿"
+    ]
+  },
+  {
+    "id": "apparel-apron-linen",
+    "name": "リネンエプロン",
+    "category": "apparel",
+    "price_jpy": 3800,
+    "summary": "リネン素材のエプロンです。首ひもと腰ひもの長さを調整でき、体格に合わせて着られます。洗うほどに生地が柔らかくなっていく素材です。",
+    "in_stock": true,
+    "rating": 4,
+    "variants": [],
+    "tags": [
+      "贈り物",
+      "ギフト",
+      "リネン"
+    ]
+  },
+  {
+    "id": "apparel-socks-2p",
+    "name": "靴下 2足セット",
+    "category": "apparel",
+    "price_jpy": 1200,
+    "summary": "厚手のコットン靴下2足セットです。かかと部分の編み方を変えてあり、ずれ落ちにくくなっています。フリーサイズで24〜27cmが目安です。",
+    "in_stock": true,
+    "rating": 3.5,
+    "variants": [],
+    "tags": [
+      "日常",
+      "セット"
+    ]
+  },
+  {
+    "id": "apparel-cap-cotton",
+    "name": "コットンキャップ",
+    "category": "apparel",
+    "price_jpy": 2800,
+    "summary": "コットン素材のキャップです。後ろのベルトでサイズを調整でき、頭まわり54〜60cm程度に対応します。汗をかいたら陰干しで乾かしてください。",
+    "in_stock": false,
+    "rating": 3.4,
+    "variants": [],
+    "tags": [
+      "日常",
+      "綿"
+    ]
+  },
+  {
+    "id": "apparel-tenugui-set",
+    "name": "注染手ぬぐい 3枚セット",
+    "category": "apparel",
+    "price_jpy": 1600,
+    "summary": "注染染めの手ぬぐい3枚セットです。片面ずつ異なる柄が入っており、季節を問わず使えます。使うほどに生地がやわらかくなっていきます。",
+    "in_stock": true,
+    "rating": 4.8,
+    "variants": [],
+    "tags": [
+      "贈り物",
+      "手土産",
+      "セット",
+      "綿"
+    ]
+  }
+]

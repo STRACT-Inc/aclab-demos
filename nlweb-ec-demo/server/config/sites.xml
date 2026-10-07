@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ACLAB demo. The first itemType selects the prompt block;
+     there is no <Product> block in prompts.xml, so Product falls back to Item. -->
+<Sites>
+  <Site name="aclab">
+    <itemType>Product</itemType>
+    <description>ACLAB Store: a fictional Japanese online shop (Japanese tea, wagashi sweets, kitchen tools, apparel) used by Agentic Commerce Lab articles. 24 products with JPY prices.</description>
+  </Site>
+
+  <!-- The same catalog loaded through the sitemap crawler -->
+  <Site name="aclab-crawl">
+    <itemType>Product</itemType>
+    <description>ACLAB Store catalog loaded by crawling the product pages' JSON-LD.</description>
+  </Site>
+
+  <!-- The same catalog with customer reviews embedded in the Product JSON-LD (not used in the article) -->
+  <Site name="aclab-reviews">
+    <itemType>Product</itemType>
+    <description>ACLAB Store catalog including customer reviews.</description>
+  </Site>
+</Sites>

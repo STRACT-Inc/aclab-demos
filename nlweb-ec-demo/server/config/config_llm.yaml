@@ -1,0 +1,13 @@
+# ACLAB demo. Anthropic only.
+# Model names come from the environment (NLWEB_LLM_HIGH / NLWEB_LLM_LOW): an ALL-CAPS value is
+# read as an environment variable name by core/config.py, so the models can be switched without editing this file.
+# Upstream shipped claude-3-7-sonnet-latest / claude-3-5-haiku-latest, both retired on 2026-02-19.
+preferred_endpoint: anthropic
+
+endpoints:
+  anthropic:
+    api_key_env: ANTHROPIC_API_KEY
+    llm_type: anthropic
+    models:
+      high: NLWEB_LLM_HIGH
+      low: NLWEB_LLM_LOW

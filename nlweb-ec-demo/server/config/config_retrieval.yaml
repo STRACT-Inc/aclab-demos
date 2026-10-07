@@ -1,0 +1,20 @@
+# ACLAB demo. Qdrant in local file mode only.
+# database_path is read from NLWEB_DB_PATH (ALL-CAPS = environment variable). Upstream used a
+# relative "../data/db" that resolves against the code directory, and shipped the Shopify MCP
+# backend enabled without credentials; both are removed here.
+write_endpoint: qdrant_local
+
+endpoints:
+  qdrant_local:
+    enabled: true
+    database_path: NLWEB_DB_PATH
+    index_name: nlweb_collection
+    db_type: qdrant
+
+  # Alternative if local mode cannot be shared between loader and server
+  qdrant_url:
+    enabled: false
+    api_endpoint_env: QDRANT_URL
+    api_key_env: QDRANT_API_KEY
+    index_name: nlweb_collection
+    db_type: qdrant

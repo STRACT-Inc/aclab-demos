@@ -1,0 +1,30 @@
+# ACLAB demo. Production mode: no per-request provider/db overrides.
+# The port must stay 8000 because site=all routes to a hardcoded http://localhost:8000.
+port: 8000
+static_directory: ../static
+
+mode: production
+
+homepage: static/index.html
+
+nlweb_gateway: nlwm.azurewebsites.net
+
+server:
+  host: 0.0.0.0
+  enable_cors: true
+  max_connections: 100
+  timeout: 30
+
+  ssl:
+    enabled: false
+    cert_file_env: SSL_CERT_FILE
+    key_file_env: SSL_KEY_FILE
+
+  logging:
+    level: info
+    file: ./logs/webserver.log
+
+  static:
+    enable_cache: true
+    cache_max_age: 3600
+    gzip_enabled: true

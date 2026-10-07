@@ -1,0 +1,19 @@
+# ACLAB demo. Anthropic has no embedding model, so the embeddings
+# come from Gemini (the lab already holds a Gemini API key; no OpenAI account is needed).
+# The model name is read from NLWEB_EMBEDDING_MODEL (ALL-CAPS = environment variable), default
+# gemini-embedding-001 (set in startup.sh / local-run.sh). The upstream provider uses the legacy
+# google-generativeai SDK, which is pinned in requirements.lock; the runtime auto-install does not
+# cover it. The vector size is fixed by the first document loaded, so reload the site with
+# --delete-site after changing the model or the provider.
+preferred_provider: gemini
+
+providers:
+  gemini:
+    api_key_env: GEMINI_API_KEY
+    model: NLWEB_EMBEDDING_MODEL
+
+  # Alternative kept for reference (text-embedding-3-small, 1536 dims). Requires OPENAI_API_KEY.
+  openai:
+    api_key_env: OPENAI_API_KEY
+    api_endpoint_env: OPENAI_ENDPOINT
+    model: text-embedding-3-small

@@ -1,0 +1,31 @@
+[
+  {
+    "order_id": "ORD-2026-0912",
+    "status": "shipped",
+    "placed_at": "2026-09-12",
+    "total_jpy": 4380,
+    "items": [
+      "玉露 50g",
+      "もなか 6個入"
+    ]
+  },
+  {
+    "order_id": "ORD-2026-0828",
+    "status": "delivered",
+    "placed_at": "2026-08-28",
+    "total_jpy": 2750,
+    "items": [
+      "煎茶 100g"
+    ]
+  },
+  {
+    "order_id": "ORD-2026-0815",
+    "status": "canceled",
+    "placed_at": "2026-08-15",
+    "total_jpy": 6600,
+    "items": [
+      "常滑急須 300ml",
+      "湯のみ ペア"
+    ]
+  }
+]
