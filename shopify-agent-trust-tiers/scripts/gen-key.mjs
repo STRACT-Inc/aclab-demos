@@ -19,10 +19,14 @@ const { publicKey, privateKey } = generateKeyPairSync("ec", { namedCurve: "P-256
 const publicJwk = { kid, ...publicKey.export({ format: "jwk" }), use: "sig", alg: "ES256" };
 const privateJwk = { kid, ...privateKey.export({ format: "jwk" }) };
 
-// cart と checkout の両方を宣言する。カートを checkout に変換するには両方の交渉が要る
+// cart と checkout の両方を宣言する。カートを checkout に変換するには両方の交渉が要る。
+// services と payment_handlers は空でも必須(UCP overview の Profile の節)。
+// これらが無いプロフィールで Shopify が "HTTP signature error: key_not_found" を返したため足した(2026-10-07)
 const profile = {
   ucp: {
     version: "2026-08-25",
+    services: {},
+    payment_handlers: {},
     capabilities: {
       "dev.ucp.shopping.cart": [{ version: "2026-08-25" }],
       "dev.ucp.shopping.checkout": [{ version: "2026-08-25" }],

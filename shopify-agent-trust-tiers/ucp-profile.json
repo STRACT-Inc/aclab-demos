@@ -1,6 +1,8 @@
 {
   "ucp": {
     "version": "2026-08-25",
+    "services": {},
+    "payment_handlers": {},
     "capabilities": {
       "dev.ucp.shopping.cart": [
         {
