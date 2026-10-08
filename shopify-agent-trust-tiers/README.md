@@ -44,10 +44,21 @@ pnpm gen-key
 プロフィールの配信には条件があります(2026 年 10 月の実測)。
 
 - `Content-Type` が `application/json` であること。`raw.githubusercontent.com` は `text/plain` で返すため使えません
-- `Cache-Control` ヘッダーが付いていること。無いと Shopify はプロフィールを受け付けません
+- `Cache-Control` ヘッダーに `public` と `max-age` の両方が入っていること(例: `public, max-age=3600`。`public, max-age=0, must-revalidate` も通る)。どちらかが欠けると Shopify はプロフィールを受け付けません。GitHub Pages の既定は `max-age=600` だけなので使えません
+- Shopify はプロフィールの取得結果をホスト単位でしばらく保持します。URL のクエリを変えても再取得されないので、配信の設定を直したあとは時間を置くか別のホストで試してください
 - 条件を満たさないとき、ストアの MCP は `HTTP signature error: key_not_found` を返します。原因が分かりにくいので、先に Global Catalog(`https://catalog.shopify.com/api/ucp/mcp`)へ同じプロフィールで `search_catalog` を送ると、`profile_malformed: Invalid content type` や `Invalid cache control` のように理由が返ります
 
-GitHub Pages はこの条件を満たします。このデモのプロフィールは公開リポジトリの `github-pages/shopify-agent-trust-tiers/ucp-profile.json` にあり、GitHub Pages で `https://stract-inc.github.io/aclab-demos/shopify-agent-trust-tiers/ucp-profile.json` として配信しています。載っているのは公開鍵だけで、対になる秘密鍵は公開していません。自分で Signed を試すときは、`pnpm gen-key` で作り直したファイルを自分の管理する URL に置いてください。エージェントのプロフィールは店側の `/.well-known/ucp` と違い、固定のパスではなく任意の URL で指定できます。
+GitHub Pages と raw.githubusercontent.com はこの条件を満たしません(前者は `max-age=600` だけ、後者は `text/plain`)。このデモでは手元のサーバーで配信し、[cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/) の Quick Tunnel(アカウント不要)で HTTPS の URL を付けます。
+
+```sh
+# ターミナル 1: プロフィールを配信する(Shopify が取りに来るとログに出る)
+pnpm serve-profile
+
+# ターミナル 2: トンネルを開く。表示された https://....trycloudflare.com を控える
+cloudflared tunnel --url http://localhost:8787
+```
+
+`.env` の `AGENT_PROFILE_URL` に `https://<表示されたホスト>/ucp-profile.json` を入れて `run-flow` を実行します。トンネルの URL は起動ごとに変わるので、エージェントの身元も毎回変わります。検証用と割り切ってください。Shopify は取得結果をホスト単位でしばらく保持するので、プロフィールを直したあとはトンネルを立て直すのが確実です。エージェントのプロフィールは店側の `/.well-known/ucp` と違い、固定のパスではなく任意の URL で指定できます。
 
 署名の組み立てで注意する点が 1 つあります。状態を変えるツール(`create_cart`、`create_checkout`、`update_*`、`cancel_*`、`complete_checkout`)では、`Idempotency-Key` ヘッダーを付けて署名対象に含める必要があります。無いと `HTTP signature error: signature_missing` になります。`get_cart` のような読み取りでは不要です。
 
@@ -84,6 +95,6 @@ lib/signature.mjs   RFC 9421 の署名(Content-Digest、signature base、ES256)
 lib/mcp.mjs         MCP の呼び出しと、応答から比べる項目の抜き出し
 lib/redact.mjs      ログの伏せ字
 lib/record.mjs      JSONL への保存と表の整形
-scripts/            gen-key、run-flow、probe-rate-limit
+scripts/            gen-key、serve-profile、run-flow、probe-rate-limit
 test/               node --test のテスト
 ```

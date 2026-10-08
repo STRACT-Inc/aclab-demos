@@ -3,3 +3,5 @@ node_modules/
 .env.*
 # 実測ログ。公開するものは伏せ字を確かめてから個別に追加する
 results/
+# gen-key が作る自分のプロフィール。公開鍵だけだが、各自が自分の URL で配信するものなのでコミットしない
+ucp-profile.json

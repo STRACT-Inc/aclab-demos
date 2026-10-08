@@ -9,6 +9,7 @@
   },
   "scripts": {
     "gen-key": "node scripts/gen-key.mjs",
+    "serve-profile": "node scripts/serve-profile.mjs",
     "flow": "node scripts/run-flow.mjs",
     "rate": "node scripts/probe-rate-limit.mjs",
     "test": "node --test \"test/*.test.mjs\""
